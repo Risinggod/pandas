@@ -25,7 +25,7 @@ data_unknown = pd.DataFrame(s_scaler.fit_transform(data_unknown),
 
 model = KMeans()
 
-visualizer = KElbowVisualizer(model, K=(0.00, 10000.00), timings=False)
+visualizer = KElbowVisualizer(model, K=(2, 9), timings=False)
 visualizer.fit(data_unknown)
 visualizer.show()
 
@@ -36,4 +36,4 @@ pred = KMeans.fit_predict(data_unknown)
 data_new = pd.concat([data, pd.DataFrame(pred, columns=["label"])], axis=1)
 print(data_new)
 
-data_new.to_csv("./data_new.csv")
+data_new.to_csv("./data_new_dimonds.csv")
